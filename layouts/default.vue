@@ -1,55 +1,97 @@
 <template>
   <div>
+    <Header />
     <Nuxt />
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+import Header from '@/components/home/Header.vue'
+export default {
+  components: {
+    Header,
+  },
 }
+</script>
 
+<style lang="scss">
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+html {
+  font-size: 62.5%;
 }
 
-.button--green:hover {
+body {
+  font-family: 'Arial', sans-serif;
+  --webkit-font-smoothing: antiliased;
+  background: #000;
+  color: #999;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
   color: #fff;
-  background-color: #3b8070;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
+a {
   color: #fff;
-  background-color: #35495e;
+  text-decoration: none;
+}
+
+p {
+  margin: 0.5rem;
+}
+
+img {
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  background: $primary-color;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.6rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none;
+  box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.45);
+  border-radius: 0.2rem;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &--icon {
+  }
+  &--rounded {
+    border-radius: 0.5rem;
+  }
+
+  &--xl {
+    font-size: 2.4rem;
+    padding: 1.9rem 2.4rem;
+    text-transform: uppercase;
+  }
+
+  &--lg {
+    font-size: 1.9rem;
+    padding: 1.3rem 2rem;
+    text-transform: uppercase;
+  }
 }
 </style>
