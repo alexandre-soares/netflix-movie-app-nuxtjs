@@ -43,7 +43,7 @@ html {
 body {
   font-family: 'Arial', sans-serif;
   --webkit-font-smoothing: antiliased;
-  background: #000;
+  background: #141414;
   color: #999;
 }
 
