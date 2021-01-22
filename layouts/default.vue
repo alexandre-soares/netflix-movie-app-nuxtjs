@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Header />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '@/components/home/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
 export default {
   components: {
-    Header,
+    Footer,
   },
 }
 </script>
@@ -25,6 +25,19 @@ export default {
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 58% !important;
+    line-height: 1;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 56% !important;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50% !important;
+  }
 }
 
 body {
@@ -52,6 +65,7 @@ a {
 
 p {
   margin: 0.5rem;
+  font-size: 1.6rem;
 }
 
 img {
@@ -92,6 +106,38 @@ img {
     font-size: 1.9rem;
     padding: 1.3rem 2rem;
     text-transform: uppercase;
+  }
+}
+
+.container {
+  max-width: 70%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2.5rem;
+}
+
+.text {
+  &--md {
+    font-size: 1.8rem;
+    margin-bottom: 1.3rem;
+  }
+
+  &--lg {
+    font-size: 2.2rem;
+    margin-bottom: 1.3rem;
+  }
+
+  &--xl {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--dark {
+    color: #999;
   }
 }
 </style>

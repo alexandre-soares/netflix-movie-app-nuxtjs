@@ -1,5 +1,5 @@
 <template>
-  <div class="showcase">
+  <header class="showcase">
     <div class="showcase__top">
       <img src="https://i.ibb.co/r5krrdz/logo.png" alt="" />
       <a href="#" class="btn btn--rounded">Sign In</a>
@@ -11,7 +11,7 @@
         Watch Free For 30 Days <i class="fas fa-chevron-right btn--icon"></i>
       </a>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -25,6 +25,10 @@ export default {}
   position: relative;
   background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center
     center/cover;
+
+  @media only screen and (max-width: $bp-large) {
+    height: 70vh;
+  }
 
   &::after {
     content: '';
@@ -50,6 +54,12 @@ export default {}
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @media only screen and (max-width: $bp-large) {
+        top: 30%;
+        left: 5%;
+        transform: translate(0);
+      }
     }
 
     & a {
