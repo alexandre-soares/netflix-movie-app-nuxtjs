@@ -28,6 +28,7 @@
         <li><a href="#">Legal Notices</a></li>
       </ul>
     </div>
+    <p class="copyright">This is a little non-commercial exercice.</p>
   </footer>
 </template>
 
@@ -64,6 +65,11 @@ export default {}
 
   & li {
     line-height: 2.4;
+  }
+
+  & .copyright {
+    font-size: 2rem;
+    margin-left: 0;
   }
 }
 </style>

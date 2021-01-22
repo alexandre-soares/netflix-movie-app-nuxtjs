@@ -2,15 +2,30 @@
   <div>
     <section class="tabs">
       <div class="container">
-        <div id="tab-1" class="tab__item tab__border">
+        <div
+          id="tab-1"
+          class="tab__item"
+          :class="{ tab__border: selected == 1 }"
+          @click="selected = 1"
+        >
           <i class="fas fa-door-open fa-3x"></i>
           <p class="hide-sm">Cancel anytime</p>
         </div>
-        <div id="tab-2" class="tab__item">
+        <div
+          id="tab-2"
+          class="tab__item"
+          :class="{ tab__border: selected == 2 }"
+          @click="selected = 2"
+        >
           <i class="fas fa-tablet-alt fa-3x"></i>
           <p class="hide-sm">Watch anywhere</p>
         </div>
-        <div id="tab-3" class="tab__item">
+        <div
+          id="tab-3"
+          class="tab__item"
+          :class="{ tab__border: selected == 3 }"
+          @click="selected = 3"
+        >
           <i class="fas fa-tags fa-3x"></i>
           <p class="hide-sm">Pick your price</p>
         </div>
@@ -18,7 +33,11 @@
     </section>
     <section class="tab__content">
       <div class="container">
-        <div id="tab-1-content" class="tab__content--item show">
+        <div
+          v-if="selected === 1"
+          id="tab-1-content"
+          class="tab__content--item"
+        >
           <div class="tab-1-content-inner">
             <div>
               <p class="text--lg">
@@ -30,7 +49,12 @@
             <img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="img" />
           </div>
         </div>
-        <div id="tab-2-content" class="tab__content--item">
+
+        <div
+          v-if="selected === 2"
+          id="tab-2-content"
+          class="tab__content--item"
+        >
           <div class="tab-2-content-top">
             <p class="text--lg">
               Watch TV shows and movies anytime, anywhere — personalized for
@@ -70,7 +94,8 @@
             </div>
           </div>
         </div>
-        <div id="tab-3-content" class="tab-content-item">
+
+        <div v-if="selected === 3" id="tab-3-content" class="tab-content-item">
           <div class="text--center">
             <p class="text--lg">
               Choose one plan and watch everything on Netflix.
@@ -145,7 +170,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      selected: 1,
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -181,6 +212,7 @@ export default {}
 
 .tab {
   &__item {
+    transition: 0.3s ease-in;
   }
 
   &__border {
@@ -200,6 +232,11 @@ export default {}
   grid-gap: 2.5rem;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
 #tab-2-content .tab-2-content-top {
@@ -208,6 +245,11 @@ export default {}
   grid-gap: 1.5rem;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: block;
+    text-align: center;
+  }
 }
 
 #tab-2-content .tab-2-content-bottom {
@@ -218,6 +260,10 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .table {
@@ -255,5 +301,28 @@ export default {}
   .hide-sm {
     display: none;
   }
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
 }
 </style>

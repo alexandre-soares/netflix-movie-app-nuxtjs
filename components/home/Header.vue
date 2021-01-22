@@ -6,7 +6,10 @@
     </div>
     <div class="showcase__content">
       <h1>See what's next</h1>
-      <p>Watch anywhere. Cancel anytime</p>
+      <p>
+        Watch anywhere. Cancel anytime. <br />
+        (Click on the button below to see the movie API)
+      </p>
       <a href="#" class="btn btn--lg">
         Watch Free For 30 Days <i class="fas fa-chevron-right btn--icon"></i>
       </a>
@@ -41,6 +44,10 @@ export default {}
     background: rgba(0, 0, 0, 0.6);
     box-shadow: inset 12rem 10rem 25rem #000000,
       inset -12rem -10rem 25rem #000000;
+
+    @media only screen and (max-width: $bp-medium) {
+      box-shadow: inset 8rem 8rem 25rem #000000, inset -8rem -8rem 25rem #000000;
+    }
   }
 
   &__top {
@@ -51,15 +58,9 @@ export default {}
     & img {
       width: 17rem;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      @media only screen and (max-width: $bp-large) {
-        top: 30%;
-        left: 5%;
-        transform: translate(0);
-      }
+      top: 30%;
+      left: 5%;
+      transform: translate(0);
     }
 
     & a {
