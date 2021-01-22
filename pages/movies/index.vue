@@ -7,6 +7,10 @@
     <Trending-movies />
 
     <Action-movies />
+
+    <Animation-movies />
+
+    <Comedy-movies />
   </div>
 </template>
 
@@ -14,11 +18,15 @@
 import TrendingMovies from '@/components/movies/TrendingMovies.vue'
 import ActionMovies from '../../components/movies/ActionMovies.vue'
 import HeroMovie from '../../components/movies/HeroMovie.vue'
+import ComedyMovies from '../../components/movies/ComedyMovies.vue'
+import AnimationMovies from '../../components/movies/AnimationMovies.vue'
 export default {
   components: {
     TrendingMovies,
     ActionMovies,
     HeroMovie,
+    ComedyMovies,
+    AnimationMovies,
   },
 }
 </script>
