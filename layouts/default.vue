@@ -142,4 +142,8 @@ img {
     color: #999;
   }
 }
+
+.relative {
+  position: relative;
+}
 </style>

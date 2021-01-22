@@ -57,6 +57,7 @@ export default {}
 
   & p {
     margin-bottom: 2rem;
+    margin-left: 0;
   }
   &__cols {
     display: grid;
@@ -75,8 +76,7 @@ export default {}
   }
 
   & .copyright {
-    font-size: 2rem;
-    margin-left: 0;
+    margin: 2rem 0;
   }
 }
 </style>

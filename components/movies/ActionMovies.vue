@@ -4,9 +4,15 @@
       <h1>Action</h1>
 
       <div class="movies__list">
-        <div v-for="(movie, index) in movies" :key="index" class="movies__img">
+        <nuxt-link
+          v-for="(movie, index) in movies"
+          :key="index"
+          tag="div"
+          :to="'/movie/' + movie.id"
+          class="movies__img"
+        >
           <img :src="IMG_PATH + movie.poster_path" :alt="movie.poster_path" />
-        </div>
+        </nuxt-link>
       </div>
 
       <i class="fas fa-chevron-right fa-6x"></i>
