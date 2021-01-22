@@ -30,7 +30,11 @@ export default {
   css: [],
 
   styleResources: {
-    scss: ['~/assets/scss/breakpoints.scss', '~/assets/scss/colors.scss'],
+    scss: [
+      '~/assets/scss/breakpoints.scss',
+      '~/assets/scss/colors.scss',
+      '~/assets/scss/movies.scss',
+    ],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

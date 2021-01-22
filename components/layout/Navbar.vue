@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
-    <div class="navbar__logo">
+    <nuxt-link to="/" tag="div" class="navbar__logo">
       <img src="https://i.ibb.co/r5krrdz/logo.png" alt="" />
-    </div>
+    </nuxt-link>
     <ul class="navbar__list">
       <li class="navbar__items"><a href="/movies">Accueil</a></li>
       <li class="navbar__items"><a href="#">Series</a></li>
@@ -52,6 +52,7 @@ export default {
 
   &__logo {
     width: 17rem;
+    cursor: pointer;
   }
 
   &__list {

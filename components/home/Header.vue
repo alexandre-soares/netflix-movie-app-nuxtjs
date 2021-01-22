@@ -61,6 +61,7 @@ export default {}
       top: 30%;
       left: 5%;
       transform: translate(0);
+      cursor: pointer;
     }
 
     & a {
