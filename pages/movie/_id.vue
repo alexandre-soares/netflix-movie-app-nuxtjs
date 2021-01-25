@@ -2,10 +2,6 @@
   <div>
     <Navbar />
 
-    <div v-if="showInfo">
-      {{ movie }}
-    </div>
-
     <div
       class="movie"
       :style="{
@@ -59,7 +55,6 @@ export default {
   data() {
     return {
       IMG_PATH: 'https://image.tmdb.org/t/p/w1280',
-      showInfo: false,
     }
   },
   computed: {
@@ -122,6 +117,7 @@ export default {
     & h1 {
       font-size: 7rem;
       width: 80%;
+      margin: 2rem 0;
 
       @media only screen and (max-width: $bp-medium) {
         text-align: center;

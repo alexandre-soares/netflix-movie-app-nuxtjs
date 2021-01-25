@@ -38,7 +38,13 @@
       <div class="movies__container">
         <h1>Results for {{ searchInput }}</h1>
 
-        <div class="movies__list">
+        <transition-group
+          name="fade"
+          tag="div"
+          class="movies__list"
+          appear
+          mode="out-in"
+        >
           <nuxt-link
             v-for="(movie, index) in computedList"
             :key="index"
@@ -48,15 +54,13 @@
           >
             <img :src="IMG_PATH + movie.poster_path" :alt="movie.poster_path" />
           </nuxt-link>
-        </div>
+        </transition-group>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
-
 export default {
   data() {
     return {
@@ -66,8 +70,6 @@ export default {
     }
   },
   computed: {
-    ...mapState(['movies']),
-    ...mapGetters(['getMovies']),
     computedList() {
       const vm = this
       return this.$store.state.movies.filter(function (item) {
@@ -79,7 +81,7 @@ export default {
   },
   created() {
     this.searchInput = this.$route.query.query
-    this.$store.dispatch('fetchMovies', this.$route.params.id)
+    this.$store.dispatch('fetchMovies')
   },
 }
 </script>
@@ -183,5 +185,13 @@ export default {
   &__img {
     margin: 2rem;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
