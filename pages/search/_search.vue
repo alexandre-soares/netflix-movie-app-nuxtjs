@@ -6,7 +6,6 @@
       </nuxt-link>
       <ul class="navbar__list">
         <li class="navbar__items"><a href="/movies">Accueil</a></li>
-        <li class="navbar__items"><a href="#">Series</a></li>
         <li class="navbar__items"><a href="/movies">Films</a></li>
       </ul>
       <div class="navbar__right-side">
@@ -134,6 +133,10 @@ export default {
       color: #fff;
       font-size: 1.4rem;
       width: 30rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        width: 10rem;
+      }
 
       &::placeholder {
         color: rgb(129, 129, 129);
