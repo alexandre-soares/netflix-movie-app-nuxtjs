@@ -5,19 +5,11 @@ export const state = () => ({
 })
 
 export const getters = {
-  getAnimationMovies: (state) => {
-    return state.movies.filter((movie) =>
-      movie.genre_ids.forEach((id) => {
-        console.log('loop ids')
-        if (id === 16) {
-          console.log(`matched because id = ${id}`)
-          return true
-        }
-      })
-    )
-  },
   getMovie: (state) => {
     return state.movie
+  },
+  getMovies: (state) => {
+    return state.movies
   },
 }
 

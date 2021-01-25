@@ -21,8 +21,10 @@
         ></i>
         <input
           v-if="wantsToSeach"
+          v-model="searchInput"
           type="text"
           placeholder="Titres, personnes, genres"
+          @input="searchMovie(searchInput)"
         />
       </div>
       <div class="navbar__profile">
@@ -34,10 +36,22 @@
 
 <script>
 export default {
+  props: {
+    search: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     return {
       wantsToSeach: false,
+      searchInput: '',
     }
+  },
+  methods: {
+    searchMovie() {
+      this.$router.push(`/search?query=${this.searchInput}`)
+    },
   },
 }
 </script>

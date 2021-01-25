@@ -26,6 +26,11 @@
     &__img {
       flex: 0 0 15%;
       cursor: pointer;
+
+      @media only screen and (max-width: $bp-medium) {
+        flex: 0 0 40%;
+
+      }
     }
 }
 
